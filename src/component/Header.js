@@ -11,7 +11,7 @@ const Header = () => {
     <h1><img src='./img/sawing_logo.svg'/></h1>
     <div className='h-right-box'>
     <ul>
-      <li><input type="checkbox" id="mode"/> 
+      <li className='darkmode-function'><input type="checkbox" id="mode"/> 
             <label htmlFor='mode'>
             <span className='darkmoon'></span>
             <span className='sunlight'></span>

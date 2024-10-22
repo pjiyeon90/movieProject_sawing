@@ -20,36 +20,20 @@ const Sorting = ({data}) => {
 //검색 실행
  const searchKeyword = (e) =>{
     e.preventDefault(); // 폼 제출 시 페이지 리로드 방지
+    const inputRef = useRef(null);
     
-    if (!searchValue) {
-      alert('검색어를 입력하세요!');
-      return;
-    }
+     console.log("keyword", keyword);
+     const url = new URL (`
+     https://api.themoviedb.org/3/movie/{movie_id}/${keywords}`);
+ }
+ function dataGet(){
+  let original = 'https://image.tmdb.org/t/p/original';
+}
 
-    // 검색어 기반으로 API 호출 (실제 API 호출 로직)
-    const url = new URL(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(searchValue)}&api_key=YOUR_API_KEY`);
-    
-    fetch(url)
-      .then((response) => response.json())
-      .then((result) => {
-        console.log('검색 결과:', result);
-        // 검색 결과를 처리하는 로직을 추가하세요 (예: 결과를 화면에 출력)
-      })
-      .catch((error) => {
-        console.error('검색 중 에러 발생:', error);
-      });
-  };
+ useEffect(()=>{
+  dataGet();    
+},[data])
 
-  // 예시 데이터를 가져오는 함수
-  function dataGet() {
-    let original = 'https://image.tmdb.org/t/p/original';
-    console.log('데이터 로드:', original);
-  }
-
-  useEffect(() => {
-    dataGet(); // 데이터 로드
-  }, [data]);
-  
   return (
     <div className='sortingbox'>
         <ul>
@@ -63,7 +47,7 @@ const Sorting = ({data}) => {
         </ul>
         <div className='searchbox'>
         <form onSubmit={searchKeyword}>
-            <input type='text' ref={searchRef} value={searchValue} onChange={searchChange} placeholder='검색어를 입력하세요'/>
+            <input type='text' ref={searchRef} onChange={searchChange} placeholder='검색어를 입력하세요'/>
             <button onClick={searchKeyword}></button>
         </form>
         </div>

@@ -9,6 +9,7 @@ import Sorting from '../component/Sorting';
 import Flowlist from '../component/Flowlist';
 import List from '../component/List';
 import { getVdo } from '../api/api';
+import Scrolltopbt from '../component/Scrolltopbt';
 
 
 
@@ -39,9 +40,8 @@ console.log(data)
     <List title="애니메이션 TOP 20" data={data.ani} type="tv"/>
     <List title="방영중인 드라마" data={data.drama} type="tv"/>
     <List title="아이를 위한 키즈 컨텐츠" data={data.kids} type="tv"/>
-
-    
     </div>
+    <Scrolltopbt/>
     <Footer/>
     </div>
   )
