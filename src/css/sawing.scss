@@ -4,8 +4,68 @@ body{background-color: black;
     height: auto;
     margin: 0;
     padding: 0;
-    color: white
+    color: white;
+    caret-color: transparent;
 }
+
+body.dark-mode {
+  background-color: #ffff;
+  color: #121212;
+  header{
+    background-color: rgba(146, 146, 146, 0.5);
+    h1{
+      img{filter: drop-shadow(0 0 5px rgba(0,0,0,.5));}
+    }
+    ul{
+      li{
+       input{caret-color: transparent;}
+      }
+      .join{
+        & a{
+          background-color: #444444;
+          border: 1px solid #444;
+          color: white;}
+      }
+    }
+  }
+  .paragraph{
+    border-radius: 10px;
+    color: white;
+  }
+  .sortingwrap{
+    .sortingbox{
+      ul{
+        li{
+          a{color: black;
+            background-color: rgba(255, 255, 255, 0.6);}
+           }
+         }
+     form{
+      input{
+        height: 45px;
+        background-color: rgba(255, 255, 255, 0.6);
+        }
+      button{
+        &::after{content: url('../../public/img/search_black.svg');}
+      }
+      }
+    }
+  } 
+  footer {
+    .footerbox {
+      .iconbox ul li a {
+        background-color: #dbdbdb;
+          }
+        .foot-row1{
+          li{
+            a{color: #9e9e9e;}
+          }
+        }
+    }
+
+  }
+}
+
 li{list-style: none;}
 a{text-decoration: none;}
 ul,p{margin: 0; padding: 0;}
@@ -254,6 +314,7 @@ header{
         border: 2px solid #666;
         border-radius: 99px;
         padding-left: 15px;
+        caret-color: #ddd;
         &:focus{
           color: white;}
       }
@@ -366,7 +427,7 @@ header{
             position: relative;
             &:hover  .paragraph{
               opacity: 1;
-            } 
+            }
             .paragraph{
               font-size: 1.4rem;
               font-weight: 500;
@@ -414,6 +475,7 @@ header{
               width: 100%;
               height: 100%;
               object-fit: cover;
+              filter: drop-shadow(0 0 3px rgba(0,0,0,.3));
               }
            }
          }
