@@ -649,7 +649,7 @@ header{
                 font-weight: 500;
                 padding-left: -10px;
                 border: 1px solid #ddd;
-                background: white url(../../public/img/playbtn.svg) 85% 50% no-repeat;
+                // background: white url(../../public/img/playbtn.svg) 85% 50% no-repeat;
                 background-size: 13px;
               }
               &:nth-child(2),&:nth-child(3){
@@ -671,17 +671,19 @@ header{
         }
       }
     .xbtn{
-      position: absolute;
-      top:20px;
-      right: 15px;
       width: 30px;
       height: 30px;
-      background: url('../../public/img/xbtn_white.svg');
-      background-size: 100%;
       font-size: 0 !important;
-      z-index: 3;
       border: none;
-      
+      img{
+        cursor: pointer;
+        position: absolute;
+        top:20px;
+        right: 15px;
+        display:block;
+        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .2));
+        z-index: 3;
+      }
     }
     .epiwrap{
       width: 85%;

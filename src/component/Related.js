@@ -19,21 +19,25 @@ const Related = ({type, id}) => {
   function dataGet(data){
     let original = 'https://image.tmdb.org/t/p/w200';
     
-    setList( data.map((obj)=>
+   // backdrop_path가 있는 항목만 필터링
+   const filteredData = data.filter(obj => obj.backdrop_path);
+
+    setList(
+      filteredData.map((obj)=> (
       <li key={obj.id}>
             <figure>
-              <img src={original + obj.backdrop_path}  />
+              <img src={original + obj.backdrop_path} alt={obj.name || obj.title} />
               </figure>
             <figcaption>
               <div className='figrow'>
-                <span>{obj.name}{obj.title}</span>
+                <span>{obj.name || obj.title}</span>
                 <button>+</button>
               </div>
               <p className='moviet'>{obj.overview}</p>
             </figcaption>
       </li>
-      )
-    )
+      ))
+    );
   }
 
   return (

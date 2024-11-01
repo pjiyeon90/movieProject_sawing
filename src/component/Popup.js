@@ -1,6 +1,5 @@
 //Modal.js
-import React from 'react'
-import ReactDOM from 'react-dom';
+import React from 'react';
 import Modal from 'react-modal';
 import Related from './Related';
 
@@ -44,7 +43,9 @@ const Popup = ({detail, modalIsOpen, setIsOpen, type, id}) => {
         <button>좋아요</button>
       </div>
       </div>
-      <button onClick={closeModal} className='xbtn'>닫기</button>
+      <button onClick={closeModal} className='xbtn'>닫기
+      <img src='./img/xbtn_white.svg'/>
+      </button>
         <div className='epiwrap'>
           <div className='detailbox'>
           <span>출연진:<i></i></span> 
