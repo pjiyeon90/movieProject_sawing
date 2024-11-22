@@ -25,7 +25,7 @@ const List = ({title,data,type}) => {
     let original = 'https://image.tmdb.org/t/p/original';
     
     setList( data.map((obj)=>
-        <div key={obj.id} onClick={()=>pop(obj.id)} >
+        <div key={obj.id}  >
           <img src={original + obj.backdrop_path}  />
           <div className='paragraph'>
             {obj.name}{obj.title}<span>{obj.overview}</span>

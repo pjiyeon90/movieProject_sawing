@@ -24,6 +24,7 @@ const Popup = ({detail, modalIsOpen, setIsOpen, type, id}) => {
     function closeModal() {
       setIsOpen(false);
     }
+    if(!modalIsOpen) return <></>;
   return (
     <div className='popbtn'>
     <Modal
